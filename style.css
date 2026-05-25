@@ -1,0 +1,1112 @@
+/* =====================
+   1. FONTS & ROOT VARIABLES
+   ===================== */
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap");
+@import url("https://fonts.cdnfonts.com/css/opendyslexic");
+
+:root {
+    --font-main: "Lexend", sans-serif;
+    --font-dyslexic: "OpenDyslexic", sans-serif;
+    --font-hyperlegible: "Atkinson Hyperlegible", sans-serif;
+    --font-comic: "Comic Sans MS", cursive;
+    --font-arial: Arial, sans-serif;
+    --sidebar-width: 220px;
+
+    /* Light theme colours */
+    --bg-main: #f5f3ef;
+    --bg-sidebar: #1e1e2e;
+    --bg-card: #ffffff;
+    --text-main: #2c2c3a;
+    --text-sidebar: #cdd6f4;
+    --accent: #7c6af7;
+    --accent-hover: #6254d4;
+    --border: #e0dcd5;
+}
+
+/* =====================
+   2. DARK THEME
+   ===================== */
+
+body.theme-dark {
+    --bg-main: #1e1e2e;
+    --bg-card: #2a2a3e;
+    --text-main: #cdd6f4;
+    --border: #3a3a52;
+}
+
+/* =====================
+   3. HIGH CONTRAST THEME
+   ===================== */
+
+body.theme-contrast {
+    --bg-main: #000000;
+    --bg-card: #111111;
+    --text-main: #ffffff;
+    --accent: #ffff00;
+    --border: #ffffff;
+}
+
+/* =====================
+   4. DYSLEXIC FONT MODE
+   ===================== */
+
+body.font-dyslexic {
+    --font-main: "OpenDyslexic", sans-serif;
+}
+
+body.font-hyperlegible {
+    --font-main: "Atkinson Hyperlegible", sans-serif;
+}
+
+body.font-comic {
+    --font-main: "Comic Sans MS", cursive;
+}
+
+body.font-arial {
+    --font-main: Arial, sans-serif;
+}
+/* =====================
+   5. RESET & BASE
+   ===================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    display: flex;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* =====================
+   6. SIDEBAR
+   ===================== */
+
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--bg-sidebar);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 24px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding-left: 8px;
+}
+
+.logo-text-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-icon {
+    font-size: 28px;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.logo-byline {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: var(--text-sidebar);
+    font-family: var(--font-main);
+    font-size: 15px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-btn.active {
+    background-color: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* =====================
+   7. MAIN CONTENT
+   ===================== */
+
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 48px;
+    flex: 1;
+    transition: font-size 0.2s ease;
+}
+
+/* =====================
+   8. PAGES
+   ===================== */
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* =====================
+   9. TYPOGRAPHY
+   ===================== */
+
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-main);
+}
+
+.page-subtitle {
+    opacity: 0.6;
+    margin-bottom: 32px;
+    font-size: 15px;
+}
+
+/* =====================
+   10. CARDS
+   ===================== */
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+/* =====================
+   11. FORM ELEMENTS
+   ===================== */
+
+.text-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin-bottom: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.text-input:focus {
+    border-color: var(--accent);
+}
+
+.select-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 2px solid var(--border);
+    padding: 12px 24px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+}
+
+.btn-danger {
+    background-color: transparent;
+    color: #e55353;
+    border: 2px solid #e55353;
+    padding: 12px 24px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-danger:hover {
+    background-color: #e55353;
+    color: #ffffff;
+}
+
+/* =====================
+   12. TASK ITEMS
+   ===================== */
+
+.task-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: opacity 0.2s;
+}
+
+.task-item.completed {
+    opacity: 0.5;
+}
+
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+}
+
+.task-subject {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background-color: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.task-delete {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--text-main);
+    opacity: 0.4;
+    transition: opacity 0.2s;
+    padding: 0 4px;
+}
+
+.task-delete:hover {
+    opacity: 1;
+}
+
+/* =====================
+   13. TIMER
+   ===================== */
+
+.timer-card {
+    max-width: 420px;
+    text-align: center;
+}
+
+.timer-mode {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 16px;
+}
+
+.timer-display {
+    font-size: 80px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 24px;
+    line-height: 1;
+}
+
+.timer-progress-track {
+    width: 100%;
+    height: 8px;
+    background-color: var(--border);
+    border-radius: 99px;
+    margin-bottom: 32px;
+    overflow: hidden;
+}
+
+.timer-progress-bar {
+    height: 100%;
+    width: 100%;
+    background-color: var(--accent);
+    border-radius: 99px;
+    transition: width 1s linear;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.timer-sessions {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-top: 20px;
+}
+
+/* =====================
+   14. TIMER SLIDERS
+   ===================== */
+
+.timer-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timer-custom-label {
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.slider-readable {
+    font-size: 12px;
+    opacity: 0.5;
+    text-align: right;
+    display: block;
+    margin-top: 2px;
+}
+
+.time-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 99px;
+    background: var(--border);
+    outline: none;
+    cursor: pointer;
+}
+
+.time-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: grab;
+    transition: transform 0.1s;
+}
+
+.time-slider::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    transform: scale(1.2);
+}
+
+.time-slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: grab;
+    border: none;
+}
+
+/* =====================
+   15. NOTES
+   ===================== */
+
+.textarea-input {
+    height: 120px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.note-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.note-item:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 12px rgba(124, 106, 247, 0.15);
+}
+
+.note-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.note-item-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.note-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.note-item-body {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.7;
+    white-space: pre-wrap;
+}
+
+.note-item-date {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.note-expanded {
+    border-color: var(--accent) !important;
+}
+
+.note-expanded .note-item-body {
+    opacity: 1;
+}
+
+/* =====================
+   16. SETTINGS
+   ===================== */
+
+.settings-heading {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.settings-description {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.settings-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.option-btn {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    border: 2px solid var(--border);
+    padding: 10px 20px;
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.option-btn:hover {
+    border-color: var(--accent);
+}
+
+.option-btn.active {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+/* =====================
+   17. CUSTOM SUBJECTS
+   ===================== */
+
+.subject-add-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.subject-emoji-field {
+    width: 64px;
+    text-align: center;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.subject-name-field {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.subject-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.subject-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--bg-main);
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.subject-tag-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0.4;
+    padding: 0;
+    transition: opacity 0.2s;
+    line-height: 1;
+}
+
+.subject-tag-delete:hover {
+    opacity: 1;
+}
+
+/* =====================
+   18. EMOJI PICKER
+   ===================== */
+
+.emoji-picker-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--bg-main);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emoji-picker-btn:hover {
+    border-color: var(--accent);
+}
+
+.emoji-picker-grid {
+    display: none;
+    position: absolute;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    margin-top: 8px;
+}
+
+.emoji-picker-grid.open {
+    display: grid;
+}
+
+.emoji-option {
+    font-size: 22px;
+    padding: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.15s;
+    border: none;
+    background: none;
+}
+
+.emoji-option:hover {
+    background-color: var(--bg-main);
+}
+
+/* =====================
+   19. WELCOME SCREEN
+   ===================== */
+
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+}
+
+.welcome-overlay.hidden {
+    display: none;
+}
+
+.welcome-modal {
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-logo {
+    font-size: 52px;
+    margin-bottom: 12px;
+}
+
+.welcome-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-main);
+}
+
+.welcome-subtitle {
+    font-size: 13px;
+    opacity: 0.4;
+    margin-bottom: 16px;
+}
+
+.welcome-intro {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.8;
+    margin-bottom: 28px;
+}
+
+.welcome-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.welcome-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background-color: var(--bg-main);
+    border-radius: 12px;
+    padding: 14px 16px;
+}
+
+.welcome-feature-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.welcome-feature strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.welcome-feature p {
+    font-size: 13px;
+    opacity: 0.7;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.welcome-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.welcome-dismiss {
+    font-size: 12px;
+    opacity: 0.4;
+    margin: 0;
+}
+
+/* =====================
+   20. TOOLTIPS
+   ===================== */
+
+.tooltip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: none;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s, border-color 0.2s;
+    vertical-align: middle;
+    margin-left: 10px;
+    position: relative;
+    line-height: 1;
+    font-family: var(--font-main);
+}
+
+.tooltip-btn:hover {
+    opacity: 1;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.tooltip-popup {
+    position: fixed;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 20px;
+    max-width: 300px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 500;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.tooltip-popup.hidden {
+    display: none;
+}
+
+.tooltip-popup-title {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: var(--accent);
+}
+
+.tooltip-popup-close {
+    display: block;
+    margin-top: 12px;
+    font-size: 12px;
+    opacity: 0.4;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-family: var(--font-main);
+    padding: 0;
+}
+
+.tooltip-popup-close:hover {
+    opacity: 0.8;
+}
+
+/* =====================
+   21. ZOOM BUTTONS
+   ===================== */
+
+.zoom-btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.zoom-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 8px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.zoom-btn span {
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.6;
+}
+
+.zoom-btn:hover {
+    border-color: var(--accent);
+}
+
+.zoom-btn.active {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.zoom-btn.active span {
+    opacity: 0.8;
+}
+
+/* =====================
+   22. FONT PREVIEWS
+   ===================== */
+
+.font-preview {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.font-preview-standard {
+    font-family: "Lexend", sans-serif;
+}
+
+.font-preview-dyslexic {
+    font-family: "OpenDyslexic", sans-serif;
+}
+
+.font-preview-hyperlegible {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+.font-preview-comic {
+    font-family: "Comic Sans MS", cursive;
+}
+
+.font-preview-arial {
+    font-family: Arial, sans-serif;
+}
+
+.settings-options .option-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 16px;
+    min-width: 100px;
+}
+
+/* =====================
+   23. READING COMFORT
+   ===================== */
+
+body {
+    --line-spacing: 1.8;
+    --letter-spacing: 0px;
+}
+
+p,
+.task-text,
+.note-item-body,
+.settings-description {
+    line-height: var(--line-spacing);
+    letter-spacing: var(--letter-spacing);
+}
+
+/* =====================
+   24. READING PREVIEW
+   ===================== */
+
+.reading-preview {
+    background-color: var(--bg-main);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    max-width: 480px;
+}
+
+.reading-preview-text {
+    font-size: 15px;
+    color: var(--text-main);
+    margin: 0;
+}
+
+/* =====================
+   25. COLOUR TINT
+   ===================== */
+
+.tint-overlay {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    transition: background-color 0.4s ease;
+}
+
+.tint-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tint-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    min-width: 64px;
+}
+
+.tint-btn:hover {
+    border-color: var(--accent);
+}
+
+.tint-btn.active {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.tint-swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+.tint-swatch-none {
+    background-color: transparent;
+    border: 2px dashed var(--border);
+}
+
+.tint-swatch-warm {
+    background-color: rgba(255, 220, 150, 0.5);
+}
+
+.tint-swatch-cool {
+    background-color: rgba(150, 200, 255, 0.5);
+}
+
+.tint-swatch-rose {
+    background-color: rgba(255, 180, 180, 0.5);
+}
+
+.tint-swatch-mint {
+    background-color: rgba(150, 230, 200, 0.5);
+}
+
+.tint-swatch-sand {
+    background-color: rgba(220, 200, 170, 0.5);
+}
