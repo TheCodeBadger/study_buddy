@@ -1,4 +1,4 @@
-# 🎓 The Sett by CodeBadger
+# 🎓 The Sett (not final name) by CodeBadger
 
 > A dyslexia-friendly study and task management app for adult learners returning to education.
 
