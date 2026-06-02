@@ -1,4 +1,4 @@
-# 🎓 Study Buddy (not final name) by CodeBadger
+# 🎓 Study Buddy by CodeBadger
 
 
 
@@ -18,6 +18,8 @@ Study Buddy was built as a portfolio project to demonstrate front-end developmen
 The app is intentionally simple, calm, and distraction-free. Every design decision was made with the user in mind, from font choices to colour contrast to spacing controls.
 
 ---
+
+### 💻 Live Demo https://studybuddy-by-codebadger.netlify.app/
 
 ## ✨ Features
 
