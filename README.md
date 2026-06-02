@@ -1,4 +1,4 @@
-# 🎓 The Sett (not final name) by CodeBadger
+# 🎓 Study Buddy (not final name) by CodeBadger
 
 
 
@@ -13,7 +13,7 @@
 
 ## 🌱 About the Project
 
-The Sett was built as a portfolio project to demonstrate front-end development skills while solving a real problem — making study tools more accessible for adult learners, particularly those with dyslexia.
+Study Buddy was built as a portfolio project to demonstrate front-end development skills while solving a real problem — making study tools more accessible for adult learners, particularly those with dyslexia.
 
 The app is intentionally simple, calm, and distraction-free. Every design decision was made with the user in mind, from font choices to colour contrast to spacing controls.
 
@@ -113,7 +113,7 @@ This is Phase 1 of a planned multi-phase project:
 ## 👤 Author
 
 **CodeBadger**
-- GitHub: PublicSnoosh(https://github.com/PublicSnoosh)
+- GitHub: The Code Badger(https://github.com/TheCodeBadger)
 - Built as part of a self-taught development journey 🎓
 
 ---
@@ -124,4 +124,4 @@ This project is open source and available under the [MIT Licence](LICENSE).
 
 ---
 
-*OpenDesk — a study companion designed for the way you think.*
+*Study Buddy — a study companion designed for the way you think.*
